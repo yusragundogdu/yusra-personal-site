@@ -33,18 +33,19 @@ nav a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 nav a:hover {
     background-color: #3498db;
     color: #fff;
     border-radius: 4px;
 }
 
-
+/* H1 STİLLERİ VE ANİMASYON BİRLEŞTİRİLDİ */
 h1 {
     text-align: center;
     color: #2980b9;
     padding: 30px 0 10px;
+    /* Animasyon entegre edildi */
+    animation: slideInFromLeft 1.5s ease-out; 
 }
 
 h2 {
@@ -53,7 +54,6 @@ h2 {
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
-
 
 table {
     width: 100%;
@@ -105,3 +105,14 @@ table img {
     text-decoration: underline;
 }
 
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

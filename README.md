@@ -37,7 +37,7 @@ My estimated AI usage for concept validation and debugging code snippets is **30
 
 ### Deployment Status (CRITICAL NOTICE)
 
-**Website URL:** https://textranch.com/c/not-yet-available-or-not-available-yet/
+**Website URL:** ?
 
 **Note to Reviewer:** All final project code is uploaded and ready in this repository. The published website link is currently unavailable because I do not have the administrative permissions required to activate **GitHub Pages** for this Classroom repository. **The final website must be reviewed directly from the code uploaded here.**
 

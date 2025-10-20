@@ -3,52 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusra'nın Kişisel Web Sayfası | Projeler</title>
+    <title>Yüsra Gündoğdu | Projects</title>
     <link rel="stylesheet" href="styles/style.css"> 
-</head>
+    
+    </head>
 <body>
 
-    <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="projects.html">Projeler</a>
-        <a href="social.html">İletişim/Sosyal</a>
-    </nav>
-    
-    <h1>Projelerim</h1>
-    <p>Burada, çeşitli coğrafi bilgi sistemleri (GIS) ve web geliştirme projelerimi görebilirsiniz.</p>
-
-    <section id="project-list">
-        <h2>Önemli Projeler</h2>
+    <div id="main-container">
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Proje Adı</th>
-                    <th>Teknoloji</th>
-                    <th>Açıklama</th>
-                    <th>Görsel Örnek</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>RGB Analiz Projesi</td>
-                    <td>Görüntü İşleme, Python/GIS</td>
-                    <td>Uydu görüntülerindeki RGB renk bileşenlerinin analizi ve görselleştirilmesi.</td>
-                    <td>
-                        <img src="images/rgb.png" alt="RGB Analiz Görseli"> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>K-15 Sınıflandırma</td>
-                    <td>Makine Öğrenimi, GIS, Veri Analizi</td>
-                    <td>Farklı tematik veriler üzerinde K-15 sınıflandırma algoritması uygulaması.</td>
-                    <td>
-                        <img src="images/k15.png" alt="K-15 Sınıflandırma Görseli"> 
-                    </td>
-                </tr>
-                </tbody>
-        </table>
-    </section>
+        <div id="sidebar">
+            <div id="profile-info">
+                <img id="profile-pic" src="images/vesikalik.jpeg" alt="Yüsra Gündoğdu Vesikalık Fotoğrafı"> 
+                <div id="profile-name">Yüsra Gündoğdu</div>
+                <div id="profile-title">Geomatics Engineering Student</div>
+            </div>
+            
+            <nav>
+    <a href="index.html">Home Page</a>
+    <a href="projects.html">Projects & Internships</a>
+    <a href="mymap.html">My Map</a>  <a href="social.html">Contact / Social</a>
+</nav>
+        </div>
 
-</body>
+        <div id="content">
+            
+            <h1>My Professional Experience</h1> 
+            
+            <section class="experience-section">
+                <h2>Başarsoft Internship</h2>
+                <p>During my internship at Başarsoft, I developed a web-based mapping application using OpenLayers and JavaScript. The site allows users to add, view, update, and delete map points through an interactive interface connected to a PostgreSQL database via an API.</p>
+                
+                <div class="experience-images">
+                    <img src="images/basarsoft.jpeg" alt="Başarsoft Proje Görseli">
+                </div>
+                
+                </section>
+
+            <section class="experience-section">
+                <h2>HDI Global Insurance</h2> 
+                <p>At HDI Insurance, I worked in the IT department supporting the claims operations. I managed databases on SQL Server, optimized data workflows, and coordinated digital documentation processes. This role allowed me to gain practical experience in database management, SQL queries, and IT systems supporting insurance operations.</p>
+                
+                <div class="experience-images">
+                    <img src="images/hdi1.jpeg" alt="HDI Sigorta Proje Görseli">
+                    </div>
+            </section>
+
+        </div>
+    </div>
+    
+    </body>
 </html>

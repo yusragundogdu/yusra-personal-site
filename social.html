@@ -3,55 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusra'nın Kişisel Web Sayfası | İletişim ve Sosyal Medya</title>
+    <title>Yüsra Gündoğdu | Contact / Social</title>
     <link rel="stylesheet" href="styles/style.css"> 
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="projects.html">Projeler</a>
-        <a href="social.html">İletişim/Sosyal</a>
-    </nav>
-    
-    <h1>İletişim ve Sosyal Medya</h1>
-    <p>Benimle iletişime geçmek veya çalışmalarıma göz atmak için aşağıdaki kanalları kullanabilirsiniz.</p>
-
-    <section id="social-links">
-        <h2>Beni Takip Edin</h2>
+    <div id="main-container">
         
-        <ul>
-            <li>
-                <a href="https://github.com/yusragundogdu" target="_blank">GitHub Profilim</a>
-                </li>
-            <li>
-                <a href="https://linkedin.com/in/yusragundogdu" target="_blank">LinkedIn Profilim</a>
-            </li>
-            <li>
-                <a href="mailto:ysragndodu@gmail.com">E-posta Gönder</a>
-            </li>
-            <li>
-                <a href="https://twitter.com/yusraagundogdu" target="_blank">Twitter/X</a>
-            </li>
-        </ul>
-        
-    </section>
+        <div id="sidebar">
+            <div id="profile-info">
+                <img id="profile-pic" src="images/vesikalik.jpeg" alt="Yüsra Gündoğdu Vesikalık Fotoğrafı"> 
+                <div id="profile-name">Yüsra Gündoğdu</div>
+                <div id="profile-title">Geomatics Engineering Student</div>
+            </div>
+            
+            <nav>
+                <a href="index.html">Home Page</a>
+                <a href="projects.html">Projects & Internships</a>
+                <a href="mymap.html">My Map</a>
+                <a href="social.html">Contact / Social</a>
+            </nav>
+        </div>
 
-    <section id="contact-form">
-        <h2>Bana Ulaşın</h2>
-        <form>
-            <label for="name">Adınız:</label>
-            <input type="text" id="name" name="name" required>
+        <div id="content">
             
-            <label for="email">E-posta:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Mesajınız:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Gönder</button>
-        </form>
-    </section>
+            <h1>Contact / Social</h1> 
+            <p>Please feel free to connect with me using the links below for professional inquiries or collaborations.</p>
 
+            <section id="social-links">
+                <h2>Find Me Online</h2>
+                
+                <ul>
+                    <li>
+                        <a href="https://github.com/yusragundogdu" target="_blank">GitHub Profile</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/yüsra-gündoğdu-567888255" target="_blank">LinkedIn Profile</a>
+                    </li>
+                    <li>
+                        <a href="mailto:yusra@example.com">Send an Email</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/yusra_social" target="_blank">Twitter / X</a>
+                    </li>
+                </ul>
+                
+            </section>
+
+            <section id="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
 </body>
 </html>

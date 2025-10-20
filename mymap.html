@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yüsra Gündoğdu | My Map</title>
+    <link rel="stylesheet" href="styles/style.css"> 
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script> 
+</head>
+<body>
+
+    <div id="main-container">
+        
+        <div id="sidebar">
+            <div id="profile-info">
+                <img id="profile-pic" src="images/vesikalik.jpeg" alt="Yüsra Gündoğdu Vesikalık Fotoğrafı"> 
+                <div id="profile-name">Yüsra Gündoğdu</div>
+                <div id="profile-title">Geomatics Engineering Student</div>
+            </div>
+            
+            <nav>
+                <a href="index.html">Home Page</a>
+                <a href="projects.html">Projects & Internships</a>
+                <a href="mymap.html">My Map</a>  <a href="social.html">Contact / Social</a>
+            </nav>
+        </div>
+
+        <div id="content">
+            
+            <h1>My OpenLayers Map</h1> 
+            <p>Below you can find my map locations.</p>
+
+           <div id="ankara-marker" title="Ankara">Ankara</div>
+<div id="istanbul-marker" title="İstanbul Beylikdüzü">Beylikdüzü</div> <div id="map"></div>
+            
+        </div>
+    </div>
+    
+    <script>
+    // Koordinatlar
+    const ankaraCoords = [32.8597, 39.9334]; 
+    const istanbulCoords = [28.6438, 41.0006];
+    
+    // YENİ HARİTA KAYNAĞI: Standart OSM (Gri Tonlama CSS Filtresi ile koyu yapacağız)
+    
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                // Standart OSM kaynağına geri dönüyoruz
+                source: new ol.source.OSM()
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat(ankaraCoords),
+            zoom: 5 
+        })
+    });
+
+    // Marker'lar aynı kalır
+    var ankaraOverlay = new ol.Overlay({
+        element: document.getElementById('ankara-marker'),
+        position: ol.proj.fromLonLat(ankaraCoords), 
+        positioning: 'center-center' 
+    });
+
+    var istanbulOverlay = new ol.Overlay({
+        element: document.getElementById('istanbul-marker'),
+        position: ol.proj.fromLonLat(istanbulCoords), 
+        positioning: 'center-center' 
+    });
+
+    map.addOverlay(ankaraOverlay);
+    map.addOverlay(istanbulOverlay);
+</script>
+</body>
+</html>

@@ -9,52 +9,270 @@ body {
     line-height: 1.6;
     background-color: #f0f0f0;
     color: #333;
-    padding-bottom: 50px;
 }
 
-header, nav, section {
+/* Genel Kapsayıcılar */
+#main-container {
+    display: flex;
+    width: 100%; 
+    max-width: none; 
+    margin: 0; 
+    box-shadow: none; 
+    min-height: 100vh; 
+}
+
+/* Sol Kenar Çubuğu (SIDEBAR) Stili */
+#sidebar {
+    width: 280px; /* Genişlik artırıldı */
+    background-color: #1A237E; /* Koyu Lacivert */
+    color: white;
     padding: 20px;
-    margin: 0 auto;
-    max-width: 1000px;
+    flex-shrink: 0; 
 }
 
-nav {
-    background: #2c3e50;
+/* Ana İçerik Alanı */
+#content {
+    flex-grow: 1;
+    padding: 0; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Profil Bilgileri */
+#profile-info {
     text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#profile-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}
+
+#profile-title {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #ecf0f1; 
+    margin-top: 5px;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4454B4; /* Açık lacivert çerçeve */
+    margin-bottom: 10px;
+    transition: transform 0.4s ease-in-out; 
+}
+
+#profile-pic:hover {
+    transform: rotate(5deg) scale(1.05); 
+}
+
+/* Navigasyon Stili (SIDEBAR İÇİN) */
+nav {
+    background: none; 
+    box-shadow: none;
+    text-align: left;
+    padding: 0;
 }
 
 nav a {
     color: #ecf0f1;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 15px; /* Yanlardan dolgu eklendi */
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
+    display: block; /* Bağlantıların alt alta gelmesini sağlar (DÜZELTME) */
 }
 
 nav a:hover {
-    background-color: #3498db;
+    background-color: #4454B4; /* Açık Lacivert */
     color: #fff;
-    border-radius: 4px;
+    animation: pulse-light 1s infinite alternate; 
 }
 
-/* H1 STİLLERİ VE ANİMASYON BİRLEŞTİRİLDİ */
+nav a:last-child {
+    border-bottom: none;
+}
+
+/* Genel Başlık Stilleri */
 h1 {
-    text-align: center;
-    color: #2980b9;
+    color: #4454B4; /* Açık lacivert */
     padding: 30px 0 10px;
-    /* Animasyon entegre edildi */
-    animation: slideInFromLeft 1.5s ease-out; 
+    font-size: 2.2em;
+    animation: none; /* index.html'deki animasyon (kayarak gelme) */
 }
 
 h2 {
-    color: #34495e;
-    border-bottom: 2px solid #bdc3c7;
-    padding-bottom: 5px;
+    color: #1A237E; /* Koyu lacivert */
+    font-size: 1.8em;
     margin-bottom: 15px;
+    border-bottom: 2px solid #4454B4; 
+    padding-bottom: 8px;
 }
 
+/* Projeler ve Staj Stilleri */
+.experience-section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.experience-section p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.experience-images {
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.experience-images img {
+    max-width: 80%; 
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dünya Görseli (index.html) */
+#earth-visual-container {
+    width: 100%;
+    height: 100%; 
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#earth-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeInSlideUp 1.5s ease-out; 
+}
+
+#overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px; 
+    z-index: 10; 
+    color: white; 
+}
+
+#overlay-text h1 {
+    text-align: left; 
+    color: white; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    animation: none; 
+}
+
+#overlay-text p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); 
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+/* OpenLayers Harita Stili */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    /* Koyu Tema Filtresi */
+    filter: invert(80%) grayscale(50%) brightness(80%); 
+}
+
+#ankara-marker, #istanbul-marker {
+    background-color: white; 
+    color: #1A237E;
+    padding: 5px 10px;
+    border: 2px solid #1A237E; 
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 10; 
+}
+
+/* Keyframe Animasyonları */
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse-light {
+    0% { box-shadow: 0 0 0 rgba(68, 84, 180, 0.4); }
+    50% { box-shadow: 0 0 10px rgba(68, 84, 180, 0.8); }
+    100% { box-shadow: 0 0 0 rgba(68, 84, 180, 0.4); }
+}
+
+@keyframes fadeInSlideUp {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* social.html Form Stilleri */
+#contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#contact-form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: -10px; 
+}
+
+#contact-form input[type="text"], 
+#contact-form input[type="email"], 
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#contact-form textarea {
+    resize: vertical; 
+    min-height: 100px;
+}
+
+#contact-form button {
+    background-color: #1A237E; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #4454B4;
+}
+
+/* Tablo Stilleri (Eski projelerden kaldı, düzeni korumak için tutuldu) */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -64,7 +282,7 @@ table {
 }
 
 table thead tr {
-    background-color: #2c3e50;
+    background-color: #1A237E;
     color: white;
 }
 
@@ -76,59 +294,4 @@ table th, table td {
 
 table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
-}
-
-table img {
-    max-width: 80px; 
-    height: auto;
-    display: block;
-    border-radius: 4px;
-}
-
-#social-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-#social-links li {
-    margin-bottom: 10px;
-}
-
-#social-links a {
-    display: inline-block;
-    color: #2980b9;
-    text-decoration: none;
-    padding: 5px;
-}
-
-#social-links a:hover {
-    text-decoration: underline;
-}
-
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-#map {
-    height: 400px;
-    width: 100%;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-}
-#ankara-marker {
-    background-color: white;
-    color: #2c3e50;
-    padding: 5px 10px;
-    border: 2px solid #2c3e50;
-    border-radius: 4px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }

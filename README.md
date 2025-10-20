@@ -33,12 +33,4 @@ I successfully implemented a sophisticated visual enhancement by learning how to
 **Total AI Usage Percentage:**
 My estimated AI usage for concept validation and debugging code snippets is **30%** of the total development time.
 
----
-
-### Deployment Status (CRITICAL NOTICE)
-
-**Website URL:** ?
-
-**Note to Reviewer:** All final project code is uploaded and ready in this repository. The published website link is currently unavailable because I do not have the administrative permissions required to activate **GitHub Pages** for this Classroom repository. **The final website must be reviewed directly from the code uploaded here.**
-
----
+ 

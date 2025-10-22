@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yüsra Gündoğdu | Kişisel Web Sayfası</title>
+    <title>Yüsra Gündoğdu | Home Page</title>
     
     <link rel="stylesheet" href="styles/style.css"> 
+    
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     
 </head>
 <body>
@@ -20,53 +22,42 @@
             </div>
             
             <nav>
-    <a href="index.html">Home Page</a>
-    <a href="projects.html">Projects & Internships</a>
-    <a href="mymap.html">My Map</a>  <a href="social.html">Contact / Social</a>
-</nav>
+                <a href="index.html">Home Page</a>
+                <a href="projects.html">Projects & Internships</a>
+                <a href="mymap.html">My Map</a>
+                <a href="social.html">Contact / Social</a>
+            </nav>
         </div>
 
         <div id="content">
 
-    <div id="earth-visual-container">
+            <div id="earth-visual-container">
+                
+                <img id="earth-image" src="images/giris.jpg" alt="Your Custom Entry Image">
+                
+                <div id="overlay-text">
+                    
+                    <h1 class="anim-title wave-text" data-splitting>About Me</h1> 
+                    
+                    <p>Hi! I'm Yüsra, a Geomatics Engineering student passionate about photogrammetry, remote sensing, and 3D city modeling. I enjoy exploring how geospatial technologies can transform real-world data into meaningful insights and realistic 3D visualizations.</p>
+                    <p>I’m especially interested in projects that combine UAV data, image processing, and mapping to support smart city and environmental applications. Always curious and eager to learn, I aim to keep growing in the intersection of technology, data, and spatial design.</p>
+                    
+                   <main>
+    <a href="projects.html" class="explore-btn">
+        <div class="text">EXPLORE</div>
         
-        <img src="images/earth-final.jpg" alt="Dünya Görseli" id="earth-image">
-        
-        <div id="overlay-text">
-            
-            <h1>About Me</h1> 
-            <p>Hi! I'm Yüsra, a Geomatics Engineering student passionate about photogrammetry, remote sensing, and 3D city modeling. I enjoy exploring how geospatial technologies can transform real-world data into meaningful insights and realistic 3D visualizations.</p>
-            <p>I’m especially interested in projects that combine UAV data, image processing, and mapping to support smart city and environmental applications. Always curious and eager to learn, I aim to keep growing in the intersection of technology, data, and spatial design.</p>
+        </a>
+</main>
+                    
+                </div>
+            </div> 
             
         </div>
-    </div>
+        </div>
     
-    </div>
-
-</div>
-    
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script>
-        var map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM() 
-                })
-            ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([32.8597, 39.9334]), 
-                zoom: 5 
-            })
-        });
-
-       
-        var ankaraOverlay = new ol.Overlay({
-            element: document.getElementById('ankara-marker'),
-            position: ol.proj.fromLonLat([32.8597, 39.9334]), 
-            positioning: 'center-center' 
-        });
-
-        map.addOverlay(ankaraOverlay); 
+        Splitting();
     </script>
 </body>
 </html>

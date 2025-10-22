@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Genel Kapsayıcılar */
+
 #main-container {
     display: flex;
     width: 100%; 
@@ -21,24 +21,33 @@ body {
     min-height: 100vh; 
 }
 
-/* Sol Kenar Çubuğu (SIDEBAR) Stili */
+
 #sidebar {
-    width: 280px; /* Genişlik artırıldı */
-    background-color: #1A237E; /* Koyu Lacivert */
+    width: 280px; 
     color: white;
     padding: 20px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    
+  
+    background-image: url('../images/stars.gif'); 
+    background-color: #1A237E; 
+    background-blend-mode: color-burn; 
+    background-size: cover; 
+    
 }
 
-/* Ana İçerik Alanı */
+
 #content {
     flex-grow: 1;
     padding: 0; 
     position: relative;
-    overflow: hidden;
+
+ 
+
+    overflow: hidden; 
 }
 
-/* Profil Bilgileri */
+
 #profile-info {
     text-align: center;
     margin-bottom: 30px;
@@ -62,7 +71,7 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #4454B4; /* Açık lacivert çerçeve */
+    border: 3px solid #4454B4; 
     margin-bottom: 10px;
     transition: transform 0.4s ease-in-out; 
 }
@@ -71,7 +80,7 @@ body {
     transform: rotate(5deg) scale(1.05); 
 }
 
-/* Navigasyon Stili (SIDEBAR İÇİN) */
+
 nav {
     background: none; 
     box-shadow: none;
@@ -82,14 +91,14 @@ nav {
 nav a {
     color: #ecf0f1;
     text-decoration: none;
-    padding: 10px 15px; /* Yanlardan dolgu eklendi */
+    padding: 10px 15px; 
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
-    display: block; /* Bağlantıların alt alta gelmesini sağlar (DÜZELTME) */
+    display: block; 
 }
 
 nav a:hover {
-    background-color: #4454B4; /* Açık Lacivert */
+    background-color: #4454B4; 
     color: #fff;
     animation: pulse-light 1s infinite alternate; 
 }
@@ -98,29 +107,28 @@ nav a:last-child {
     border-bottom: none;
 }
 
-/* Genel Başlık Stilleri */
-h1 {
-    color: #4454B4; /* Açık lacivert */
-    padding: 30px 0 10px;
-    font-size: 2.2em;
-    animation: none; /* index.html'deki animasyon (kayarak gelme) */
-}
 
+h1 {
+    color: #1A237E; 
+    padding: 30px 0 10px;
+    text-align: left; 
+    animation: none; 
+}
 h2 {
-    color: #1A237E; /* Koyu lacivert */
+    color: #1A237E; 
     font-size: 1.8em;
     margin-bottom: 15px;
     border-bottom: 2px solid #4454B4; 
     padding-bottom: 8px;
 }
 
-/* Projeler ve Staj Stilleri */
+
 .experience-section {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6); 
     padding: 30px;
     margin-bottom: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 
 .experience-section p {
@@ -145,19 +153,30 @@ h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Dünya Görseli (index.html) */
+.company-logo {
+    width: 40px; 
+    height: 40px; 
+    object-fit: contain;
+    margin-right: 10px; 
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+
 #earth-visual-container {
     width: 100%;
     height: 100%; 
-    min-height: 100vh;
-    position: relative;
+    min-height: 100vh; 
+    position: absolute; 
+    top: 0;
+    left: 0;
     overflow: hidden;
 }
 
 #earth-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
@@ -170,33 +189,30 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 40px; 
+    padding: 60px 40px; 
     z-index: 10; 
     color: white; 
+    
+    background-color: rgba(0, 0, 0, 0.55); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
 }
 
-#overlay-text h1 {
-    text-align: left; 
-    color: white; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    animation: none; 
-}
-
-#overlay-text p {
+#overlay-text h1, #overlay-text p {
     color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); 
-    margin-top: 15px;
-    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* OpenLayers Harita Stili */
+
 #map {
     height: 400px;
     width: 100%;
     margin-top: 20px;
     border: 1px solid #ccc;
-    /* Koyu Tema Filtresi */
-    filter: invert(80%) grayscale(50%) brightness(80%); 
+    filter: none; 
 }
 
 #ankara-marker, #istanbul-marker {
@@ -211,11 +227,6 @@ h2 {
     z-index: 10; 
 }
 
-/* Keyframe Animasyonları */
-@keyframes slideInFromLeft {
-    0% { transform: translateX(-100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
 
 @keyframes pulse-light {
     0% { box-shadow: 0 0 0 rgba(68, 84, 180, 0.4); }
@@ -228,7 +239,19 @@ h2 {
     100% { transform: translateY(0); opacity: 1; }
 }
 
-/* social.html Form Stilleri */
+
+.anim-title.wave-text .char {
+    animation: wave 1s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+    animation-delay: calc(20ms * var(--char-index)); 
+}
+
+@keyframes wave {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-0.8em); }
+}
+
+
+
 #contact-form form {
     display: flex;
     flex-direction: column;
@@ -272,26 +295,104 @@ h2 {
     background-color: #4454B4;
 }
 
-/* Tablo Stilleri (Eski projelerden kaldı, düzeni korumak için tutuldu) */
-table {
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
 }
 
-table thead tr {
-    background-color: #1A237E;
+
+.explore-btn {
+    width: 15em; 
+    height: 4em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    background-color: #4454B4; 
+    border-radius: 15px;
+    padding-left: 0.5em;
+    z-index: 3;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.2em; 
     color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-table th, table td {
-    padding: 12px 15px;
-    text-align: left;
-    border: 1px solid #ddd;
+
+.explore-btn .text {
+    color: white;
+    z-index: 3;
+    position: relative;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+
+.explore-btn img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+.explore-btn:hover {
+    background-color: #1A237E;
+    transform: scale(1.05);
+}
+
+
+.explore-btn:hover .stars,
+.explore-btn:hover .planet,
+.explore-btn:hover .satallite,
+.explore-btn:hover .astronaut {
+    opacity: 0.3; 
+    transform: scale(1.1);
+}
+
+
+@keyframes around {
+    0% { 
+        transform: translate(-3.5em, 8.5em); 
+        z-index: 5;
+    } 
+    50% { 
+        transform: translate(1em, 3.5em);
+    }
+    100% { 
+        transform: translate(-3.5em, 8.5em);
+    }
+}
+.simple-explore-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #4454B4; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    position: relative;
+    letter-spacing: 0.1em;
+}
+
+.simple-explore-btn:hover {
+    background-color: #1A237E; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
 }

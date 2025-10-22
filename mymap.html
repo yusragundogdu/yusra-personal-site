@@ -23,7 +23,8 @@
             <nav>
                 <a href="index.html">Home Page</a>
                 <a href="projects.html">Projects & Internships</a>
-                <a href="mymap.html">My Map</a>  <a href="social.html">Contact / Social</a>
+                <a href="mymap.html">My Map</a>
+                <a href="social.html">Contact / Social</a>
             </nav>
         </div>
 
@@ -32,48 +33,61 @@
             <h1>My OpenLayers Map</h1> 
             <p>Below you can find my map locations.</p>
 
-           <div id="ankara-marker" title="Ankara">Ankara</div>
-<div id="istanbul-marker" title="İstanbul Beylikdüzü">Beylikdüzü</div> <div id="map"></div>
-            
-        </div>
+            <div id="ankara-marker" title="Ankara">Ankara</div>
+            <div id="istanbul-marker" title="İstanbul">İstanbul</div>
+            <div id="map"></div> </div>
     </div>
     
     <script>
-    // Koordinatlar
+   
     const ankaraCoords = [32.8597, 39.9334]; 
-    const istanbulCoords = [28.6438, 41.0006];
-    
-    // YENİ HARİTA KAYNAĞI: Standart OSM (Gri Tonlama CSS Filtresi ile koyu yapacağız)
-    
+    const istanbulCoords = [28.9784, 41.0082];
+    const ZOOM_SEVIYESI = 10; 
+
     var map = new ol.Map({
-        target: 'map',
+        target: 'map', 
         layers: [
             new ol.layer.Tile({
-                // Standart OSM kaynağına geri dönüyoruz
                 source: new ol.source.OSM()
             })
         ],
         view: new ol.View({
             center: ol.proj.fromLonLat(ankaraCoords),
-            zoom: 5 
+            zoom: 5
         })
     });
 
-    // Marker'lar aynı kalır
-    var ankaraOverlay = new ol.Overlay({
-        element: document.getElementById('ankara-marker'),
-        position: ol.proj.fromLonLat(ankaraCoords), 
-        positioning: 'center-center' 
-    });
+    
+    function createMarker(id, coords) {
+        return new ol.Overlay({
+            element: document.getElementById(id),
+            position: ol.proj.fromLonLat(coords),
+            positioning: 'center-center'
+        });
+    }
 
-    var istanbulOverlay = new ol.Overlay({
-        element: document.getElementById('istanbul-marker'),
-        position: ol.proj.fromLonLat(istanbulCoords), 
-        positioning: 'center-center' 
-    });
+    
+    var ankaraOverlay = createMarker('ankara-marker', ankaraCoords);
+    var istanbulOverlay = createMarker('istanbul-marker', istanbulCoords);
 
     map.addOverlay(ankaraOverlay);
     map.addOverlay(istanbulOverlay);
+
+
+    
+    function addMarkerClickEvent(markerId, coords) {
+        document.getElementById(markerId).addEventListener('click', function() {
+            map.getView().animate({
+                center: ol.proj.fromLonLat(coords),
+                zoom: ZOOM_SEVIYESI,
+                duration: 1000 
+            });
+        });
+    }
+
+   
+    addMarkerClickEvent('ankara-marker', ankaraCoords);
+    addMarkerClickEvent('istanbul-marker', istanbulCoords);
 </script>
 </body>
 </html>
